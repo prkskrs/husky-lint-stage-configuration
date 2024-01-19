@@ -6,7 +6,12 @@
     "prettier": "^3.2.4"
   },
   "lint-staged": {
-    "src/**/*{.js,.ts,.html,.css}": "prettier --write",
-    "src/**/*.js": "eslint"
+    "src/script.js": [
+      "prettier --write",
+      "eslint"
+    ]
+  },
+  "scripts": {
+    "lint:fix": "eslint \"{src,apps,libs,test}/**/*.{js,ts,tsx}\" --fix"
   }
 }
